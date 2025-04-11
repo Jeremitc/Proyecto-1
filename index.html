@@ -4,173 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora SENATI</title>
-    <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-    
-        body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          background-color: #f4f4f4;
-          font-family: Arial, sans-serif;
-          padding: 15px;
-        }
-    
-        .calculadora {
-          background-color: #fff;
-          border-radius: 10px;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          width: 100%;
-          max-width: 320px;
-        }
-    
-        #entrada {
-          width: 100%;
-          height: 60px;
-          font-size: 1.8em;
-          text-align: right;
-          padding: 10px;
-          border: none;
-          background-color: #f9f9f9;
-          color: #333;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-    
-        .botones {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 8px;
-    
-        }
-    
-        button {
-          padding: 15px 10px;
-          font-size: 1.2em;
-          background-color: #e0e0e0;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          user-select: none;
-          touch-action: manipulation;
-    
-        }
-    
-        button:hover {
-          background-color: #d0d0d0;
-        }
-    
-        button:active {
-          transform: scale(0.98);
-        }
-    
-        .igual {
-          background-color: #4CAF50;
-          color: white;
-          grid-column: span 2;
-        }
-    
-        .igual:hover {
-          background-color: #45a049;
-        }
-    
-        /* Estilos responsive */
-        @media (max-width: 360px) {
-          .calculadora {
-            padding: 15px;
-          }
-          button {
-            padding: 12px 8px;
-            font-size: 1.1em;
-          }
-          #entrada {
-            height: 50px;
-            font-size: 1.5em;
-          }
-        }
-    
-        @media (max-height: 600px) {
-          body {
-            align-items: flex-start;
-            padding-top: 20px;
-          }
-          .calculadora {
-            padding: 15px;
-          }
-          button {
-            padding: 10px 8px;
-          }
-        }
-    
-        @media (min-width: 768px) {
-          .calculadora {
-            max-width: 360px;
-          }
-          button {
-            padding: 20px;
-            font-size: 1.5em;
-          }
-          #entrada {
-            height: 80px;
-            font-size: 2em;
-          }
-        }
-    
-      </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
     <body>
       <div class="calculadora">
         <input type="text" id="entrada" disabled>   
         <div class="botones">   
-          <button xx="clearEntry()">C</button>   
-          <button xx="deleteLast()">DEL</button>   
-          <button xx="addToInput('/')">/</button>
-          <button xx="addToInput('*')">*</button>    
-          <button xx="addToInput('7')">7</button>    
-          <button xx="addToInput('8')">8</button>    
-          <button xx="addToInput('9')">9</button>    
-          <button xx="addToInput('-')">-</button>    
-          <button xx="addToInput('4')">4</button>   
-          <button xx="addToInput('5')">5</button>    
-          <button xx="addToInput('6')">6</button>    
-          <button xx="addToInput('+')">+</button>    
-          <button xx="addToInput('1')">1</button>    
-          <button xx="addToInput('2')">2</button>    
-          <button xx="addToInput('3')">3</button>    
-          <button xx="calculateResult()" class="igual">=</button>    
-          <button xx="addToInput('0')">0</button>    
-          <button xx="addToInput('.')">.</button>    
+          <button onclick="clearEntry()">C</button>   
+          <button onclick="deleteLast()">DEL</button>   
+          <button onclick="addToInput('/')">/</button>
+          <button onclick="addToInput('*')">*</button>    
+          <button onclick="addToInput('7')">7</button>    
+          <button onclick="addToInput('8')">8</button>    
+          <button onclick="addToInput('9')">9</button>    
+          <button onclick="addToInput('-')">-</button>    
+          <button onclick="addToInput('4')">4</button>   
+          <button onclick="addToInput('5')">5</button>    
+          <button onclick="addToInput('6')">6</button>    
+          <button onclick="addToInput('+')">+</button>    
+          <button onclick="addToInput('1')">1</button>    
+          <button onclick="addToInput('2')">2</button>    
+          <button onclick="addToInput('3')">3</button>    
+          <button onclick="calculateResult()" class="igual">=</button>    
+          <button onclick="addToInput('0')">0</button>    
+          <button onclick="addToInput('.')">.</button>    
         </div>   
       </div>   
-      <script>    
-        let entrada = document.getElementById('entrada');    
-        function addToInput(valor) {    
-          entrada.value += valor;    
-        }    
-        function clearEntry() {    
-          entrada.value = '';    
-        }    
-        function deleteLast() {    
-          entrada.value = entrada.value.slice(0, -1);    
-        }
-    
-        function calculateResult() {
-            try {
-    
-            entrada.value = eval(entrada.value);
-          } catch (error) {
-                entrada.value = 'Error';    
-          }
-        }   
-      </script>
+      <script src="script.js"></script>
     </body>
 </html>
