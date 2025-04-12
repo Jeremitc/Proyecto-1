@@ -17,3 +17,18 @@ function calculateResult() {
         entrada.value = 'Error';    
     }
 }
+
+function raizCuadrada() {
+    try {
+        let valor = parseFloat(entrada.value);
+        if (valor < 0) {
+            entrada.value = 'Error';
+        } else if (String(valor) === "NaN") {
+            entrada.value = 'Error';
+        } else {
+            entrada.value = Math.sqrt(valor);
+        }
+    } catch {
+        entrada.value = 'Error';    
+    }
+}
